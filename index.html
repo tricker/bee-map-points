@@ -11,6 +11,7 @@
         <div id='map'></div>
             <script>
             mapboxgl.accessToken = '<YOUR-TOKEN-HERE>';
+
             var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
@@ -24,7 +25,7 @@
                     function (error, image) {
                         if (error) throw error;
                         map.addImage('custom-marker', image);
-                        // Add a GeoJSON source with 2 points
+                        // load the castles file
                         map.addSource('points', {
                             'type': 'geojson',
                             'data': 'castles.geojson'
@@ -37,8 +38,8 @@
                             'source': 'points',
                             'layout': {
                                 'icon-image': 'custom-marker',
-                                // get the title name from the source's "title" property
-                                'text-field': ['get', 'title'],
+                                // get the title name from the source's "naam" property
+                                'text-field': ['get', 'naam'],
                                 'text-font': [
                                     'Open Sans Semibold',
                                     'Arial Unicode MS Bold'
