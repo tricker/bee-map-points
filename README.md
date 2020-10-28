@@ -4,8 +4,8 @@
 ## to run it on a mac
 
 * clone this project
-* substitute your real token where it says `<YOUR-TOKEN-HERE>` on line 13 of `index.html`
-* update apache config so DocumentRoot is the root of this project
+* substitute your real mapbox token where it says `<YOUR-TOKEN-HERE>` on line 13 of `index.html`
+* we need a local web server to develop on, macs already have one installed, update apache config so DocumentRoot is the root of this project
 
     for example:
 
